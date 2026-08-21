@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { sections } from "@/data/sections";
 
 const fragments = [
   "Orders",
@@ -22,7 +23,7 @@ export function PosoraStory() {
     >
       <Container>
         <RevealOnScroll>
-          <Eyebrow index="06">Flagship — Posora</Eyebrow>
+          <Eyebrow index={sections.posora.index}>{sections.posora.label}</Eyebrow>
         </RevealOnScroll>
 
         <RevealOnScroll delay={0.1}>

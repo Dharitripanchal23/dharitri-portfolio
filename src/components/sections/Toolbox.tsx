@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { toolboxCategories } from "@/data/toolbox";
+import { sections } from "@/data/sections";
 import { cn } from "@/lib/utils";
 
 export function Toolbox() {
@@ -15,10 +16,10 @@ export function Toolbox() {
     <section id="toolbox" className="section-pad relative border-t border-border" aria-label="Engineering toolbox">
       <Container>
         <SectionHeading
-          index="08"
-          eyebrow="Engineering Toolbox"
-          title="The stack behind the systems."
-          description="Tools chosen for reliability, not trend — each one earning its place through production use."
+          index={sections.stack.index}
+          eyebrow={sections.stack.label}
+          title="Technical context, clearly labelled."
+          description="This is not a logo wall. The labels distinguish tools I have built with from systems I lead or oversee."
           className="mb-16"
         />
 
@@ -44,6 +45,8 @@ export function Toolbox() {
                     key={item.label}
                     role="tab"
                     aria-selected={active === index}
+                    aria-controls="stack-panel"
+                    id={`stack-tab-${index}`}
                     onClick={() => setActive(index)}
                     className={cn(
                       "shrink-0 border-l-2 px-4 py-3 text-left font-mono text-xs transition-colors sm:shrink",
@@ -57,8 +60,16 @@ export function Toolbox() {
                 ))}
               </div>
 
-              <div className="p-6 font-mono text-sm sm:p-8">
+              <div
+                id="stack-panel"
+                role="tabpanel"
+                aria-labelledby={`stack-tab-${active}`}
+                className="p-6 font-mono text-sm sm:p-8"
+              >
                 <div className="mb-4 text-faint">{category.comment}</div>
+                <div className="mb-6 text-xs uppercase tracking-[0.16em] text-accent">
+                  {category.relationship}
+                </div>
                 <div className="text-muted">
                   export const <span className="text-accent">{category.label}</span> = [
                 </div>

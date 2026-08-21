@@ -1,23 +1,30 @@
+"use client";
+
+import { useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
-import { architecturePrinciples, architectureLayers } from "@/data/architecture";
+import { architectureLayers } from "@/data/architecture";
+import { sections } from "@/data/sections";
 
 export function Architecture() {
+  const [activeLayer, setActiveLayer] = useState(0);
+  const layer = architectureLayers[activeLayer];
+
   return (
     <section id="architecture" className="section-pad relative border-t border-border" aria-label="Delivery thinking">
       <Container>
         <SectionHeading
-          index="07"
-          eyebrow="Delivery Thinking"
+          index={sections.layers.index}
+          eyebrow={sections.layers.label}
           title={
             <>
-              Governance,
+              The work around
               <br />
-              by design.
+              the work.
             </>
           }
-          description="Every project I lead starts with stakeholder alignment and risk visibility — engineering execution follows deliberate delivery decisions."
+          description="Delivery is a system. Select a layer to inspect where I contribute, what I own, and how technical context affects the plan."
           className="mb-20"
         />
 
@@ -29,17 +36,26 @@ export function Architecture() {
                 fig. 01 — delivery layers
               </div>
               <div className="flex flex-col p-5">
-                {architectureLayers.map((layer, index) => (
-                  <div key={layer.label}>
-                    <div className="flex items-center justify-between gap-4 border border-border-strong px-4 py-3.5 transition-colors hover:border-accent">
+                {architectureLayers.map((item, index) => (
+                  <div key={item.label}>
+                    <button
+                      type="button"
+                      onClick={() => setActiveLayer(index)}
+                      aria-pressed={activeLayer === index}
+                      className={`flex w-full items-center justify-between gap-4 border px-4 py-3.5 text-left transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
+                        activeLayer === index
+                          ? "border-accent bg-surface-raised"
+                          : "border-border-strong hover:border-accent"
+                      }`}
+                    >
                       <div>
-                        <div className="text-sm font-medium text-text">{layer.label}</div>
-                        <div className="font-mono text-[11px] text-muted">{layer.detail}</div>
+                        <div className="text-sm font-medium text-text">{item.label}</div>
+                        <div className="font-mono text-[11px] text-muted">{item.detail}</div>
                       </div>
                       <span className="font-mono text-[11px] text-faint">
                         L{index}
                       </span>
-                    </div>
+                    </button>
                     {index < architectureLayers.length - 1 && (
                       <div className="mx-auto h-4 w-px bg-border-strong" aria-hidden />
                     )}
@@ -49,26 +65,22 @@ export function Architecture() {
             </div>
           </RevealOnScroll>
 
-          {/* Principles — numbered documentation rows */}
           <div className="lg:col-span-7">
-            <div className="tech-label mb-0 border-b border-border pb-3 text-faint">
-              Operating principles
-            </div>
-            {architecturePrinciples.map((principle, index) => (
-              <RevealOnScroll key={principle.title} delay={index * 0.05}>
-                <div className="group grid grid-cols-12 gap-4 border-b border-border py-6 transition-colors hover:bg-surface">
-                  <span className="col-span-2 font-mono text-sm text-faint transition-colors group-hover:text-accent sm:col-span-1">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="col-span-10 text-base font-semibold text-text sm:col-span-4">
-                    {principle.title}
-                  </h3>
-                  <p className="col-span-10 col-start-3 text-sm leading-relaxed text-muted sm:col-span-7 sm:col-start-auto">
-                    {principle.description}
-                  </p>
+            <RevealOnScroll>
+              <div className="min-h-72 border border-border bg-surface p-6 sm:p-8">
+                <div className="flex items-center justify-between border-b border-border pb-3">
+                  <span className="tech-label text-faint">layer.inspect</span>
+                  <span className="font-mono text-xs text-accent">L{activeLayer}</span>
                 </div>
-              </RevealOnScroll>
-            ))}
+                <h3 className="display display-md mt-10 text-text">{layer.label}</h3>
+                <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
+                  {layer.responsibility}
+                </p>
+                <p className="mt-10 font-mono text-xs uppercase tracking-[0.14em] text-faint">
+                  Select another layer to inspect the operating system.
+                </p>
+              </div>
+            </RevealOnScroll>
           </div>
         </div>
       </Container>

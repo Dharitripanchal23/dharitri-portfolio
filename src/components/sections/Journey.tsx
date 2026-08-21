@@ -4,22 +4,23 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { journeyMilestones } from "@/data/journey";
+import { sections } from "@/data/sections";
 
 export function Journey() {
   return (
     <section id="journey" className="section-pad relative border-t border-border" aria-label="Career journey">
       <Container>
         <SectionHeading
-          index="03"
-          eyebrow="Career Journey"
+          index={sections.journey.index}
+          eyebrow={sections.journey.label}
           title={
             <>
-              Seven years.
+              From writing
               <br />
-              One consistent thread.
+              software to owning delivery.
             </>
           }
-          description="From web development contributor to delivery manager for international clients — every step compounded into the next. Read it like a changelog."
+          description="Read it like a changelog: each version added a different kind of responsibility, from modules and APIs to delivery systems and product work."
           className="mb-20"
         />
 

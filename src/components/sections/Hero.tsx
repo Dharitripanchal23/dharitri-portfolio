@@ -17,10 +17,10 @@ const fadeUp: Variants = {
 };
 
 const specs = [
-  { label: "Experience", value: `${siteConfig.yearsExperience}+ yrs` },
-  { label: "Discipline", value: "Delivery / Agile PM" },
-  { label: "Currently", value: "Excellent Webworld" },
-  { label: "Base", value: siteConfig.relocation },
+  { label: "Experience", value: `${siteConfig.yearsExperience}+ years shipping software` },
+  { label: "Proof", value: "3,000+ users / 100+ partners" },
+  { label: "Delivery", value: "8–12 person teams" },
+  { label: "Status", value: "India → Germany / EU" },
 ];
 
 export function Hero() {
@@ -41,11 +41,11 @@ export function Hero() {
           className="mb-8 flex flex-wrap items-center justify-between gap-4 border-y border-border py-3"
         >
           <span className="tech-label">
-            IT Project Manager — Technical Delivery Manager — Agile PM
+            Technical delivery · product · engineering
           </span>
           <span className="tech-label hidden items-center gap-2 sm:flex">
             <span className="block h-1.5 w-1.5 bg-accent" aria-hidden />
-            Status: Open to Germany & EU roles
+            Status: Open to Germany & EU opportunities
           </span>
         </motion.div>
 
@@ -57,7 +57,7 @@ export function Hero() {
             custom={0.1}
             className="block text-text"
           >
-            Delivering projects
+            I make sure
           </motion.span>
           <motion.span
             initial="hidden"
@@ -66,7 +66,7 @@ export function Hero() {
             custom={0.2}
             className="block text-text"
           >
-            on scope<span className="text-accent">.</span>
+            &quot;it works in the demo&quot;
           </motion.span>
           <motion.span
             initial="hidden"
@@ -75,7 +75,7 @@ export function Hero() {
             custom={0.3}
             className="block text-muted sm:pl-[8vw]"
           >
-            Leading teams
+            survives contact
           </motion.span>
           <motion.span
             initial="hidden"
@@ -84,7 +84,7 @@ export function Hero() {
             custom={0.4}
             className="block text-muted sm:pl-[8vw]"
           >
-            that execute<span className="text-accent">.</span>
+            with production<span className="text-accent">.</span>
           </motion.span>
         </h1>
 
@@ -96,10 +96,11 @@ export function Hero() {
             custom={0.5}
             className="max-w-lg text-base leading-relaxed text-muted sm:text-lg"
           >
-            {siteConfig.yearsExperience}+ years of end-to-end project ownership
-            across SaaS, marketplace, and e-commerce — coordinating teams of
-            8–12, managing international stakeholders, and driving Agile
-            delivery from discovery to production release.
+            {siteConfig.yearsExperience}+ years taking SaaS, marketplace, and
+            regulated e-commerce from ambiguous requirements to production —
+            alongside teams of 8–12 and international clients across the US
+            and Middle East. I started in web development; now I lead the work
+            that has to survive release day.
           </motion.p>
 
           <motion.div
@@ -109,8 +110,8 @@ export function Hero() {
             custom={0.6}
             className="flex flex-wrap items-center gap-3"
           >
-            <Button href="#journey" icon={ArrowDown} size="lg">
-              Explore Journey
+            <Button href="#projects" icon={ArrowDown} size="lg">
+              Explore work
             </Button>
             <Button
               href={siteConfig.resumeHref}

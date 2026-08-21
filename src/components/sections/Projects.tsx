@@ -1,24 +1,30 @@
+"use client";
+
+import { useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { projects } from "@/data/projects";
+import { sections } from "@/data/sections";
 import { cn } from "@/lib/utils";
 
 export function Projects() {
+  const [expandedProject, setExpandedProject] = useState<string | null>("mustadam");
+
   return (
     <section id="projects" className="section-pad relative border-t border-border" aria-label="Featured projects">
       <Container>
         <SectionHeading
-          index="05"
-          eyebrow="Featured Work"
+          index={sections.work.index}
+          eyebrow={sections.work.label}
           title={
             <>
-              Projects delivered.
+              Projects with
               <br />
-              Outcomes measured.
+              an audit trail.
             </>
           }
-          description="Platforms where I owned the delivery, the governance, and the stakeholder relationship — from discovery through production release."
+          description="The scope is real. The unknowns are marked. Expand a project to inspect the problem, accountability, decision, and outcome."
           className="mb-12"
         />
 
@@ -89,9 +95,41 @@ export function Projects() {
                             ))}
                           </div>
                         </div>
+                      <button
+                        type="button"
+                        aria-expanded={expandedProject === project.slug}
+                        aria-controls={`${project.slug}-case-study`}
+                        onClick={() =>
+                          setExpandedProject((current) =>
+                            current === project.slug ? null : project.slug
+                          )
+                        }
+                        className="mt-5 w-full border border-border-strong px-4 py-3 text-left font-mono text-xs uppercase tracking-[0.14em] text-text transition-colors hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                      >
+                        {expandedProject === project.slug ? "Close case study ↑" : "View case study →"}
+                      </button>
                       </div>
                     </div>
                   </div>
+                {expandedProject === project.slug && (
+                  <div
+                    id={`${project.slug}-case-study`}
+                    className="relative mt-8 grid grid-cols-1 border-t border-l border-border sm:grid-cols-2"
+                  >
+                    {[
+                      ["Problem", project.caseStudy.problem],
+                      ["Context", project.caseStudy.context],
+                      ["My role", project.caseStudy.accountability],
+                      ["Decision", project.caseStudy.decision],
+                      ["Outcome", project.caseStudy.outcome],
+                    ].map(([label, content]) => (
+                      <div key={label} className="border-b border-r border-border p-5">
+                        <h4 className="tech-label text-faint">{label}</h4>
+                        <p className="mt-3 text-sm leading-relaxed text-muted">{content}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
                 </article>
               </RevealOnScroll>
             );
