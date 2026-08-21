@@ -20,9 +20,12 @@ const description =
   "Dharitri Panchal is a technical delivery leader with 7+ years taking SaaS, marketplace, and regulated e-commerce software from ambiguous requirements to production.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dharitripanchal.dev"),
+  metadataBase: new URL("https://dharitri-portfolio.up.railway.app"),
   title,
   description,
+  alternates: {
+    canonical: "/",
+  },
   keywords: [
     "Dharitri Panchal",
     "IT Project Manager",
@@ -37,14 +40,12 @@ export const metadata: Metadata = {
     description,
     type: "website",
     siteName: "Dharitri Panchal",
+    url: "/",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title,
     description,
-  },
-  icons: {
-    icon: "/favicon.ico",
   },
 };
 
