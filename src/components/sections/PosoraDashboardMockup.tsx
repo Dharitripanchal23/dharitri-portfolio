@@ -17,7 +17,7 @@ export function PosoraDashboardMockup() {
         </span>
         <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-accent">
           <span className="h-1.5 w-1.5 animate-pulse bg-accent" aria-hidden />
-          Product preview
+          Illustrative demo data
         </span>
       </div>
 
