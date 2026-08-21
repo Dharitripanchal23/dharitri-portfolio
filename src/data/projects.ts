@@ -86,28 +86,6 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "berbe",
-    name: "Berbe",
-    category: "Real-Time Travel Platform",
-    description:
-      "Directed delivery of web and mobile applications with real-time data requirements — coordinating backend, mobile, and analytics teams against a time-sensitive product roadmap.",
-    role: "Technical Lead / Delivery Coordinator",
-    responsibilities: [
-      "Real-time data delivery",
-      "Backend & mobile coordination",
-      "Firebase & Google Analytics",
-      "Milestone accountability",
-      "AWS infrastructure",
-    ],
-    caseStudy: {
-      problem: "Coordinate web, mobile, backend, and analytics work for a travel product where real-time data mattered to the roadmap.",
-      context: "Time-sensitive delivery across backend, mobile, and analytics teams using Firebase, Google Analytics, and AWS.",
-      accountability: "Directed cross-team delivery and milestone accountability.",
-      decision: "[ADD REAL BERBE DELIVERY OR TECHNICAL DECISION]",
-      outcome: "[ADD REAL METRIC OR DELIVERY OUTCOME]",
-    },
-  },
-  {
     slug: "remote-personnel",
     name: "Remote Personnel",
     category: "SaaS Staffing Platform · Australia",
