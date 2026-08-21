@@ -6,12 +6,13 @@ export interface Project {
   role: string;
   teamSize?: string;
   responsibilities: string[];
+  sourceUrl?: string;
   caseStudy: {
     problem: string;
     context: string;
     accountability: string;
-    decision: string;
-    outcome: string;
+    decision?: string;
+    outcome?: string;
   };
 }
 
@@ -24,6 +25,8 @@ export const projects: Project[] = [
       "Led an AI-powered fashion marketplace for a Texas-based client across mobile and web — creating a shared buyer/seller experience with personalised discovery, seller tooling, payments, shipping, and tax automation.",
     role: "Technical Project Manager / Delivery Lead",
     teamSize: "8 members · 6 months",
+    sourceUrl:
+      "https://www.excellentwebworld.com/project/fashion-ecommerce-app-case-study/",
     responsibilities: [
       "AI-enabled buyer and seller workflows",
       "Stripe payment integration",
@@ -47,6 +50,8 @@ export const projects: Project[] = [
       "Led a sustainable second-hand furniture marketplace for buyers, sellers, B2B vendors, and warehouse teams — combining verification, operational workflows, and CO₂ reporting across mobile and web.",
     role: "Delivery Manager / Technical Project Lead",
     teamSize: "9 members · 15 weeks",
+    sourceUrl:
+      "https://www.excellentwebworld.com/project/furniture-trading-platform/",
     responsibilities: [
       "KYC and listing-approval workflows",
       "Multi-role marketplace delivery",
@@ -81,8 +86,8 @@ export const projects: Project[] = [
       problem: "Ship web and mobile commerce experiences with several payment gateway integrations without allowing feature requests to blur release scope.",
       context: "Payment integrations included PayPal, PayU, and CC Avenue.",
       accountability: "Coordinated releases and facilitated client feature-prioritisation workshops.",
-      decision: "[ADD REAL FLOWERS CAKES PRIORITISATION OR INTEGRATION DECISION]",
-      outcome: "[ADD REAL METRIC OR DELIVERY OUTCOME]",
+      outcome:
+        "Delivered web and mobile commerce flows with PayPal, PayU, and CC Avenue payment integrations.",
     },
   },
   {
@@ -93,6 +98,8 @@ export const projects: Project[] = [
       "Led a mobile-first staffing platform and brand website for FIFO operations, replacing manual phone and email coordination with a verified, on-demand workforce deployment system.",
     role: "Technical Project Lead",
     teamSize: "7 months · 3 phases",
+    sourceUrl:
+      "https://www.excellentwebworld.com/project/staffing-platform-for-fifo-operations/",
     responsibilities: [
       "Five-stage worker screening workflow",
       "Credential-expiry automation",

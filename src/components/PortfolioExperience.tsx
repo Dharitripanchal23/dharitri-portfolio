@@ -3,6 +3,8 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
+import { Mission } from "@/components/sections/Mission";
+import { WhoIAm } from "@/components/sections/WhoIAm";
 import { Journey } from "@/components/sections/Journey";
 import { Projects } from "@/components/sections/Projects";
 import { PosoraStory } from "@/components/sections/PosoraStory";
@@ -20,8 +22,10 @@ export function PortfolioExperience() {
       <Header />
       <main id="main-content">
         <Hero />
-        <Impact />
+        <Mission />
+        <WhoIAm />
         <Journey />
+        <Impact />
         <Projects />
         <PosoraStory />
         <PosoraProduct />

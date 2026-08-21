@@ -21,21 +21,22 @@ export function Contact() {
 
         <RevealOnScroll delay={0.1}>
           <h2 className="display display-lg mt-8 text-text">
-            Got a project that looks
+            Stakeholder meeting
             <br />
-            simple on the{" "}
+            to{" "}
             <span className="underline decoration-accent decoration-[3px] underline-offset-[12px]">
-              roadmap
+              sprint review
             </span>
             <span className="text-accent">.</span>
           </h2>
         </RevealOnScroll>
 
         <RevealOnScroll delay={0.2}>
-          <p className="mt-6 max-w-md text-base leading-relaxed text-muted sm:text-lg">
-            I&apos;m interested in technical delivery, product,
-            engineering-adjacent leadership, and startup opportunities.
-            Based in India; preparing for Germany / EU opportunities.
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+            If you&apos;re building a technical team, shipping a complex
+            product, or need someone who can sit comfortably in both the
+            stakeholder meeting and the sprint review — let&apos;s talk.
+            Open to opportunities across Germany and the EU.
           </p>
         </RevealOnScroll>
 
