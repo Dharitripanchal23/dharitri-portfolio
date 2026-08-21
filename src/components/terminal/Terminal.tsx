@@ -8,6 +8,7 @@ import { runCommand, commandOrder } from "./commands";
 import { MatrixRain } from "./MatrixRain";
 import { PosoraDemoModal } from "@/components/sections/PosoraDemoModal";
 import { siteConfig } from "@/data/site";
+import { sections } from "@/data/sections";
 
 interface HistoryEntry {
   command: string;
@@ -102,16 +103,16 @@ export function Terminal() {
       <MatrixRain active={matrixActive} />
       <Container>
         <SectionHeading
-          index="13"
-          eyebrow="Try It Yourself"
+          index={sections.terminal.index}
+          eyebrow={sections.terminal.label}
           title={
             <>
-              A résumé is
+              Explore the
               <br />
-              one-directional.
+              evidence directly.
             </>
           }
-          description="This isn't. Type 'help' to explore — or try something unexpected."
+          description="Use the buttons or type a command. The terminal is optional; the information is not hidden behind it."
           className="mb-16"
         />
 
@@ -132,6 +133,8 @@ export function Terminal() {
           <div
             ref={scrollRef}
             className="h-[380px] overflow-y-auto p-5 font-mono text-sm leading-relaxed sm:p-6"
+            aria-live="polite"
+            aria-label="Terminal output"
           >
             {history.map((entry, index) => (
               <div key={index} className="mb-3">
@@ -166,6 +169,20 @@ export function Terminal() {
                 placeholder="type a command..."
               />
             </form>
+          </div>
+          <div className="flex flex-wrap gap-2 border-t border-border p-4" aria-label="Terminal command shortcuts">
+            {["help", "about", "experience", "work", "posora", "stack", "leadership", "delivery", "contact"].map(
+              (command) => (
+                <button
+                  key={command}
+                  type="button"
+                  onClick={() => submitCommand(command)}
+                  className="border border-border px-3 py-2 font-mono text-[11px] uppercase tracking-[0.12em] text-muted transition-colors hover:border-accent hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                >
+                  {command}
+                </button>
+              )
+            )}
           </div>
         </div>
       </Container>

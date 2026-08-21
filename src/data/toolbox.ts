@@ -2,12 +2,14 @@ export interface ToolboxCategory {
   label: string;
   comment: string;
   items: string[];
+  relationship: string;
 }
 
 export const toolboxCategories: ToolboxCategory[] = [
   {
-    label: "backend",
-    comment: "// Server-side & APIs",
+    label: "built-with",
+    comment: "// Technologies I have built with",
+    relationship: "Built with",
     items: [
       "PHP",
       "Laravel",
@@ -21,25 +23,28 @@ export const toolboxCategories: ToolboxCategory[] = [
     ],
   },
   {
-    label: "database",
-    comment: "// Data layer",
+    label: "data",
+    comment: "// Data stores used in software delivery",
+    relationship: "Worked with",
     items: ["MySQL", "PostgreSQL", "MongoDB"],
   },
   {
-    label: "cloud",
-    comment: "// Infrastructure & deployment",
+    label: "delivery-systems",
+    comment: "// Systems I lead and oversee in delivery",
+    relationship: "Led / oversaw",
     items: [
       "AWS",
       "Alibaba Cloud",
       "Git",
       "GitLab CI/CD",
       "CI/CD Pipelines",
-      "Mobile Coordination (iOS/Android)",
+      "Mobile delivery coordination",
     ],
   },
   {
-    label: "ai-tools",
-    comment: "// AI-augmented delivery",
+    label: "ai-assisted",
+    comment: "// Tools explored in delivery workflows",
+    relationship: "Worked with",
     items: [
       "Cursor AI",
       "GitHub Copilot",

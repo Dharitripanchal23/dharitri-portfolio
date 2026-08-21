@@ -68,6 +68,27 @@ export function PosoraProduct() {
                 ))}
               </div>
             </RevealOnScroll>
+            <RevealOnScroll delay={0.15}>
+              <div>
+                <div className="tech-label mb-1 text-faint">Build record</div>
+                {posoraDetails.evidence.map((item, index) => (
+                  <div
+                    key={item.label}
+                    className="grid grid-cols-12 gap-3 border-b border-border py-4"
+                  >
+                    <span className="col-span-1 font-mono text-[11px] text-faint">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="col-span-11 font-mono text-[11px] uppercase tracking-[0.12em] text-accent">
+                      {item.label}
+                    </span>
+                    <p className="col-span-11 col-start-2 text-sm leading-relaxed text-muted">
+                      {item.value}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </RevealOnScroll>
           </div>
 
           {/* Right — OS mockup */}

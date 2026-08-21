@@ -1,17 +1,14 @@
 export interface ImpactStat {
-  value: number;
-  suffix: string;
+  value: string;
   label: string;
-  isNumeric: boolean;
-  displayValue?: string;
+  context: string;
 }
 
 export const impactStats: ImpactStat[] = [
-  { value: 7, suffix: "+", label: "Years Experience", isNumeric: true },
-  { value: 12, suffix: "", label: "Team Members Led", isNumeric: true },
-  { value: 3000, suffix: "+", label: "Users at Launch", isNumeric: true },
-  { value: 0, suffix: "", label: "Client Regions", isNumeric: false, displayValue: "US & Middle East" },
-  { value: 0, suffix: "", label: "Critical Incidents", isNumeric: false, displayValue: "Zero post-launch" },
+  { value: "7+", label: "years", context: "leading software delivery" },
+  { value: "8–12", label: "people", context: "across delivery teams" },
+  { value: "3,000+", label: "users", context: "on the Skriti marketplace" },
+  { value: "100+", label: "partners", context: "on the Skriti marketplace" },
 ];
 
 export const currentFocusItems = [

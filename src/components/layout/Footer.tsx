@@ -12,7 +12,7 @@ export function Footer() {
           <span className="block h-1.5 w-1.5 bg-accent" />
           <span>{siteConfig.location} / {siteConfig.relocation}</span>
         </div>
-        <div>Built with passion. Designed with product thinking.</div>
+        <div>Currently building Posora.</div>
       </Container>
     </footer>
   );

@@ -3,12 +3,11 @@ import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { siteConfig } from "@/data/site";
+import { sections } from "@/data/sections";
 
 const channels = [
   { label: "Email", value: siteConfig.email, href: `mailto:${siteConfig.email}`, external: false },
-  { label: "Phone", value: siteConfig.phone, href: `tel:${siteConfig.phone.replace(/\s/g, "")}`, external: false },
   { label: "LinkedIn", value: "in/dharitripanchal", href: siteConfig.linkedin, external: true },
-  { label: "GitHub", value: "Dharitripanchal23", href: siteConfig.github, external: true },
   { label: "Resume", value: "Dharitri_Panchal_IT_PM_Resume.pdf", href: siteConfig.resumeHref, external: true },
 ];
 
@@ -17,16 +16,16 @@ export function Contact() {
     <section id="contact" className="section-pad relative border-t border-border" aria-label="Contact">
       <Container>
         <RevealOnScroll>
-          <Eyebrow index="12">Contact</Eyebrow>
+          <Eyebrow index={sections.contact.index}>{sections.contact.label}</Eyebrow>
         </RevealOnScroll>
 
         <RevealOnScroll delay={0.1}>
           <h2 className="display display-lg mt-8 text-text">
-            Great software starts
+            Got a project that looks
             <br />
-            with great{" "}
+            simple on the{" "}
             <span className="underline decoration-accent decoration-[3px] underline-offset-[12px]">
-              conversations
+              roadmap
             </span>
             <span className="text-accent">.</span>
           </h2>
@@ -34,9 +33,9 @@ export function Contact() {
 
         <RevealOnScroll delay={0.2}>
           <p className="mt-6 max-w-md text-base leading-relaxed text-muted sm:text-lg">
-            Whether you&apos;re hiring for delivery leadership, building
-            across borders, or exploring opportunities in Germany — I&apos;m
-            one message away.
+            I&apos;m interested in technical delivery, product,
+            engineering-adjacent leadership, and startup opportunities.
+            Based in India; preparing for Germany / EU opportunities.
           </p>
         </RevealOnScroll>
 

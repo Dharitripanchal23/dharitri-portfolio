@@ -6,6 +6,13 @@ export interface Project {
   role: string;
   teamSize?: string;
   responsibilities: string[];
+  caseStudy: {
+    problem: string;
+    context: string;
+    accountability: string;
+    decision: string;
+    outcome: string;
+  };
 }
 
 export const projects: Project[] = [
@@ -22,9 +29,15 @@ export const projects: Project[] = [
       "Sprint planning & resource coordination",
       "Stripe, AWS & Firebase integrations",
       "Client communication & escalations",
-      "Architecture decisions",
-      "Zero critical incidents post-launch",
+      "Integration and release coordination",
     ],
+    caseStudy: {
+      problem: "Launch a marketplace that could connect end users, brand partners, and multi-party transaction flows.",
+      context: "US-based C-level client; 3,000+ end users and 100+ brand partners referenced at launch.",
+      accountability: "Owned end-to-end delivery, stakeholder communication, sprint planning, and coordination around Stripe, AWS, and Firebase integrations.",
+      decision: "[ADD REAL SKRITI DELIVERY OR TECHNICAL DECISION]",
+      outcome: "Marketplace launched with 3,000+ end users and 100+ brand partners.",
+    },
   },
   {
     slug: "mustadam",
@@ -42,6 +55,13 @@ export const projects: Project[] = [
       "GitLab CI/CD pipeline",
       "Scope & risk management",
     ],
+    caseStudy: {
+      problem: "Deliver a regulated multi-seller, multi-warehouse commerce platform while meeting ZATCA e-invoicing requirements.",
+      context: "Four parallel development streams; six phased releases; web and mobile delivery; eight third-party integrations.",
+      accountability: "Led delivery governance, release coordination, scope and risk management, and cross-functional communication.",
+      decision: "[ADD THE REAL MUSTADAM DELIVERY DECISION]",
+      outcome: "Delivery was structured across six phased releases under the regulatory and integration constraints.",
+    },
   },
   {
     slug: "flowers-cakes-online",
@@ -57,6 +77,13 @@ export const projects: Project[] = [
       "Client prioritisation workshops",
       "Scope control",
     ],
+    caseStudy: {
+      problem: "Ship web and mobile commerce experiences with several payment gateway integrations without allowing feature requests to blur release scope.",
+      context: "Payment integrations included PayPal, PayU, and CC Avenue.",
+      accountability: "Coordinated releases and facilitated client feature-prioritisation workshops.",
+      decision: "[ADD REAL FLOWERS CAKES PRIORITISATION OR INTEGRATION DECISION]",
+      outcome: "[ADD REAL METRIC OR DELIVERY OUTCOME]",
+    },
   },
   {
     slug: "berbe",
@@ -72,5 +99,12 @@ export const projects: Project[] = [
       "Milestone accountability",
       "AWS infrastructure",
     ],
+    caseStudy: {
+      problem: "Coordinate web, mobile, backend, and analytics work for a travel product where real-time data mattered to the roadmap.",
+      context: "Time-sensitive delivery across backend, mobile, and analytics teams using Firebase, Google Analytics, and AWS.",
+      accountability: "Directed cross-team delivery and milestone accountability.",
+      decision: "[ADD REAL BERBE DELIVERY OR TECHNICAL DECISION]",
+      outcome: "[ADD REAL METRIC OR DELIVERY OUTCOME]",
+    },
   },
 ];

@@ -2,7 +2,6 @@ import { siteConfig } from "@/data/site";
 import { journeyMilestones } from "@/data/journey";
 import { projects } from "@/data/projects";
 import { toolboxCategories } from "@/data/toolbox";
-import { leadershipCards } from "@/data/leadership";
 import { posoraDetails } from "@/data/posora";
 
 export interface CommandContext {
@@ -18,31 +17,25 @@ export type CommandHandler = (args: string[], ctx: CommandContext) => string[] |
 export const commandOrder = [
   "help",
   "about",
-  "projects",
-  "skills",
-  "timeline",
-  "resume",
-  "contact",
-  "leadership",
+  "experience",
+  "work",
   "posora",
   "stack",
-  "experience",
-  "hire",
+  "leadership",
+  "delivery",
+  "contact",
 ];
 
 const descriptions: Record<string, string> = {
   help: "show available commands",
   about: "a short introduction",
-  projects: "selected work & case studies",
-  skills: "technical skill set",
-  timeline: "engineering journey",
-  resume: "download the resume",
+  experience: "career progression",
+  work: "selected delivery work",
   contact: "ways to reach me",
   leadership: "how I lead delivery teams",
   posora: "the product I'm building",
   stack: "the technology stack",
-  experience: "years & scope of experience",
-  hire: "thinking about working together?",
+  delivery: "delivery layers and practice",
 };
 
 export const commands: Record<string, CommandHandler> = {
@@ -51,38 +44,31 @@ export const commands: Record<string, CommandHandler> = {
     "",
     ...commandOrder.map((cmd) => `  ${cmd.padEnd(12)} — ${descriptions[cmd]}`),
     "",
-    "Tip: try something unexpected. Not everything is in this list.",
+    "Choose a command button below, or type one here.",
   ],
 
   about: () => [
-    `${siteConfig.name} — ${siteConfig.role}`,
+    `${siteConfig.name} — Technical delivery / product / engineering`,
     "",
-    "IT Project Manager and Delivery Manager with 7+ years of end-to-end",
-    "project ownership across SaaS, marketplace, and e-commerce.",
+    "Technically fluent delivery leader with 7+ years across SaaS,",
+    "marketplace, and e-commerce software.",
     "",
-    `Based in ${siteConfig.location}. ${siteConfig.relocation}.`,
-    "Coordinating teams of 8–12, managing US & Middle East clients,",
-    "and driving Agile delivery from discovery to production release.",
+    `Based in ${siteConfig.location}. Open to Germany / EU opportunities.`,
+    "Started in web development; now leads teams of 8–12 from ambiguous",
+    "requirements through estimation, engineering, release, and production.",
   ],
 
-  projects: () =>
+  work: () =>
     projects.flatMap((project) => [
       `${project.name} — ${project.category}`,
-      `  role: ${project.role}`,
-      `  focus: ${project.responsibilities.join(", ")}`,
+      `  role:    ${project.role}`,
+      `  problem: ${project.caseStudy.problem}`,
+      `  outcome: ${project.caseStudy.outcome}`,
       "",
     ]),
 
-  skills: () =>
-    toolboxCategories.flatMap((cat) => [`${cat.label}:`, `  ${cat.items.join(", ")}`, ""]),
-
-  timeline: () =>
+  experience: () =>
     journeyMilestones.map((m) => `${m.year}  ${m.title}`),
-
-  resume: (_args, ctx) => {
-    ctx.downloadResume();
-    return ["Downloading resume...", "If nothing happens, check your browser's download bar."];
-  },
 
   contact: () => [
     "Let's talk:",
@@ -92,8 +78,10 @@ export const commands: Record<string, CommandHandler> = {
     `  github    ${siteConfig.github}`,
   ],
 
-  leadership: () =>
-    leadershipCards.flatMap((card) => [`${card.title}:`, `  ${card.items.join(", ")}`, ""]),
+  leadership: () => [
+    "I lead the work between roadmap and production:",
+    "  clarify scope → map dependencies → surface trade-offs → coordinate release",
+  ],
 
   posora: (args, ctx) => {
     if (args[0] === "--demo") {
@@ -101,7 +89,7 @@ export const commands: Record<string, CommandHandler> = {
       return ["Opening Posora product preview..."];
     }
     return [
-      "Posora — Cloud-native restaurant operating system",
+      "Posora — restaurant operating system",
       "",
       `status: ${posoraDetails.status}`,
       `vision: ${posoraDetails.vision}`,
@@ -117,15 +105,13 @@ export const commands: Record<string, CommandHandler> = {
     ...toolboxCategories.map((cat) => `  ${cat.label.padEnd(14)} ${cat.items.slice(0, 4).join(", ")}...`),
   ],
 
-  experience: () => [
-    `${siteConfig.yearsExperience}+ years of delivery & project management`,
-    "Teams of 8–12 across backend, frontend, QA, and mobile",
-    "International clients across the US and Middle East",
-    "Currently: IT Project Manager / Technical Lead at Excellent Webworld",
-    `Relocation: ${siteConfig.relocation}`,
+  delivery: () => [
+    "stakeholder     requests, priorities, constraints",
+    "governance      risks, scope, roadmap, reporting",
+    "delivery        estimates, sequencing, releases",
+    "engineering     web, mobile, backend, QA",
+    "infrastructure  cloud, CI/CD, deployments",
   ],
-
-  hire: () => ["Great choice.", "Let's build something amazing together.", "Type 'contact' to reach out."],
 
   clear: (_args, ctx) => {
     ctx.clear();

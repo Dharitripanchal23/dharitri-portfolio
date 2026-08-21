@@ -15,20 +15,23 @@ const plexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
-const title = "Dharitri Panchal — IT Project Manager & Technical Delivery Manager";
+const title = "Dharitri Panchal — Technical Delivery, Project Leadership & Product";
 const description =
-  "IT Project Manager and Technical Delivery Manager with 7+ years of end-to-end project ownership across SaaS, marketplace, and e-commerce platforms — coordinating cross-functional teams, managing international stakeholders, and driving Agile delivery from discovery through production release.";
+  "Dharitri Panchal is a technical delivery leader with 7+ years taking SaaS, marketplace, and regulated e-commerce software from ambiguous requirements to production.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dharitripanchal.dev"),
+  metadataBase: new URL("https://dharitri-portfolio.up.railway.app"),
   title,
   description,
+  alternates: {
+    canonical: "/",
+  },
   keywords: [
     "Dharitri Panchal",
     "IT Project Manager",
     "Technical Delivery Manager",
-    "Agile Project Manager",
-    "Engineering Leader",
+    "Project Leadership",
+    "Technical Delivery",
     "Posora",
   ],
   authors: [{ name: "Dharitri Panchal" }],
@@ -37,14 +40,12 @@ export const metadata: Metadata = {
     description,
     type: "website",
     siteName: "Dharitri Panchal",
+    url: "/",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title,
     description,
-  },
-  icons: {
-    icon: "/favicon.ico",
   },
 };
 

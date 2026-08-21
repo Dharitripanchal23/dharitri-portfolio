@@ -11,6 +11,30 @@ export const posoraStatement =
 export const posoraDetails = {
   status: "Currently Building",
   vision: "Making restaurant operations effortless.",
+  evidence: [
+    {
+      label: "Why",
+      value:
+        "Restaurant work is often split across orders, kitchen, inventory, billing, customers, staff, reservations, and reporting.",
+    },
+    {
+      label: "What I own",
+      value:
+        "Product definition and the build of a cloud-native restaurant operating system.",
+    },
+    {
+      label: "Product decision",
+      value: "[ADD REAL POSORA PRODUCT DECISION]",
+    },
+    {
+      label: "Technical decision",
+      value: "[ADD REAL POSORA TECHNICAL DECISION]",
+    },
+    {
+      label: "Current status",
+      value: "Currently building. [ADD REAL STATUS OR PILOT DETAIL]",
+    },
+  ],
   technology: [
     "React 19",
     "TanStack Start",
