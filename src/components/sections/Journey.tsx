@@ -49,9 +49,25 @@ export function Journey() {
               <h3 className="text-lg font-semibold tracking-tight text-text sm:text-xl md:col-span-4">
                 {milestone.title}
               </h3>
-              <p className="max-w-xl text-sm leading-relaxed text-muted md:col-span-6">
-                {milestone.description}
-              </p>
+              <div className="max-w-2xl text-sm leading-relaxed text-muted md:col-span-6">
+                <p>{milestone.description}</p>
+                {milestone.decision && (
+                  <p className="mt-3">
+                    <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-accent">
+                      Decision
+                    </span>{" "}
+                    {milestone.decision}
+                  </p>
+                )}
+                {milestone.result && (
+                  <p className="mt-2">
+                    <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-success">
+                      Result
+                    </span>{" "}
+                    {milestone.result}
+                  </p>
+                )}
+              </div>
             </motion.li>
           ))}
         </ol>

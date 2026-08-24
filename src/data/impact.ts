@@ -7,8 +7,11 @@ export interface ImpactStat {
 export const impactStats: ImpactStat[] = [
   { value: "7+", label: "years", context: "leading software delivery" },
   { value: "8–12", label: "people", context: "across delivery teams" },
-  { value: "3,000+", label: "users", context: "on the Skriti marketplace" },
-  { value: "100+", label: "partners", context: "on the Skriti marketplace" },
+  {
+    value: "US · ME · AU",
+    label: "client regions",
+    context: "across marketplace, SaaS, and regulated commerce products",
+  },
 ];
 
 export const currentFocusItems = [

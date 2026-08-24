@@ -9,8 +9,10 @@ export const posoraStatement =
   "Posora brings everything together into one cloud-native restaurant operating system.";
 
 export const posoraDetails = {
-  status: "Currently Building",
-  vision: "Making restaurant operations effortless.",
+  status: "Publicly live · actively building",
+  vision: "One source of operational truth.",
+  liveUrl: "https://posora.co/",
+  aiUrl: "https://posora.co/#ai",
   evidence: [
     {
       label: "Why",
@@ -25,17 +27,17 @@ export const posoraDetails = {
     {
       label: "Product decision",
       value:
-        "Designed for the complete restaurant workflow, not another POS that only records transactions. Ordering, kitchen operations, inventory, billing, customers, staff, reservations, and insights share useful operational context. AI-assisted workflows reduce manual work and make data actionable instead of acting as a standalone chatbot.",
+        "We chose to make AI operate on Posora's operational data rather than build a generic restaurant chatbot. The product should not merely answer questions; it should understand the restaurant's actual numbers and help the owner make a decision.",
     },
     {
       label: "Technical decision",
       value:
-        "Built as a cloud-native, modular system so restaurant workflows can evolve independently while sharing a common data layer. The architecture is AI-ready: structured operational data and workflows give intelligent assistance, automated insights, and workflow support real business context—not isolated prompts.",
+        "Orders, recipes, inventory, margins, and demand history remain authoritative. AI is the reasoning and interface layer over that business data—not the source of truth.",
     },
     {
       label: "Current status",
       value:
-        "Currently building and iterating. Core restaurant workflows are implemented; the focus is validating real-world workflows, improving reliability and usability, and integrating new AI-powered capabilities into a production-ready platform.",
+        "Publicly live and actively building. Core restaurant operations and the AI suite are available while reliability, usability, and real-world workflows continue to be refined.",
     },
   ],
   technology: [
@@ -72,6 +74,36 @@ export const posoraDetails = {
     {
       title: "Reports & Insights",
       description: "Ownership-level visibility into revenue, staff performance, and inventory trends.",
+    },
+  ],
+  aiModules: [
+    {
+      title: "Owner Copilot",
+      signal: "What should I focus on today?",
+      description:
+        "Daily briefings, prioritized actions, and conversational analysis grounded in the restaurant's own revenue, stock, margins, orders, and operating data.",
+      principle: "Not a generic chatbot. Answers start with the restaurant's actual numbers.",
+    },
+    {
+      title: "Demand & Staffing Forecast",
+      signal: "Prepare on Tuesday. Do not react on Friday.",
+      description:
+        "A 14-day prediction of covers, revenue, and staffing risk using POS, QR, and delivery history.",
+      principle: "Turns demand history into a forward staffing and preparation decision.",
+    },
+    {
+      title: "Food Cost AI",
+      signal: "A same-day signal, not another monthly report.",
+      description:
+        "Monitors food-cost and margin movement, then surfaces recommendations around pricing, recipes, and bundles.",
+      principle: "Connects a margin change to an action while it can still affect the day.",
+    },
+    {
+      title: "AI Inventory Predictions",
+      signal: "Predicted demand × recipes = purchasing requirement.",
+      description:
+        "Predicts tomorrow's dish-level demand and translates it into an operational purchase list.",
+      principle: "Prediction is only useful when it changes what the restaurant buys or prepares.",
     },
   ],
 };

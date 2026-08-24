@@ -17,10 +17,10 @@ const fadeUp: Variants = {
 };
 
 const specs = [
-  { label: "Experience", value: `${siteConfig.yearsExperience}+ years shipping software` },
-  { label: "Proof", value: "3,000+ users / 100+ partners" },
+  { label: "Experience", value: `${siteConfig.yearsExperience}+ years` },
   { label: "Delivery", value: "8–12 person teams" },
-  { label: "Status", value: "India → Germany / EU" },
+  { label: "Products", value: "SaaS · marketplaces · commerce" },
+  { label: "Clients", value: "US · Middle East · Australia" },
 ];
 
 export function Hero() {
@@ -96,11 +96,10 @@ export function Hero() {
             custom={0.5}
             className="max-w-lg text-base leading-relaxed text-muted sm:text-lg"
           >
-            {siteConfig.yearsExperience}+ years taking SaaS, marketplace, and
-            regulated e-commerce from ambiguous requirements to production —
-            alongside teams of 8–12 and international clients across the US
-            and Middle East. I started in web development; now I lead the work
-            that has to survive release day.
+            {siteConfig.yearsExperience}+ years turning ambiguous requirements
+            into shipped software — across SaaS, marketplaces, regulated
+            e-commerce, and client-facing products. Technically fluent enough
+            to challenge estimates, architecture, scope, and delivery decisions.
           </motion.p>
 
           <motion.div
@@ -111,17 +110,15 @@ export function Hero() {
             className="flex flex-wrap items-center gap-3"
           >
             <Button href="#projects" icon={ArrowDown} size="lg">
-              Explore work
+              See what I built
             </Button>
             <Button
-              href={siteConfig.resumeHref}
+              href="#contact"
               variant="secondary"
               size="lg"
               icon={ArrowRight}
-              target="_blank"
-              rel="noopener noreferrer"
             >
-              Resume
+              Let&apos;s talk
             </Button>
           </motion.div>
         </div>

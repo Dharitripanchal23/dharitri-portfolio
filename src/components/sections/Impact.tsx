@@ -34,7 +34,7 @@ export function Impact() {
         />
 
         <RevealOnScroll>
-          <div className="grid grid-cols-1 border-t border-l border-border sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 border-t border-l border-border sm:grid-cols-3">
             {impactStats.map((stat, index) => (
               <StatItem key={stat.label} stat={stat} index={index} />
             ))}
